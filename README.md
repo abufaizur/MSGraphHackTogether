@@ -1,5 +1,5 @@
 # MSGraphHackTogether
-This Application connects Microsoft Graph API &amp; Display Teams Users Status
+This Application connects Microsoft Graph API &amp; Displays Teams Users Status
 
 
 
