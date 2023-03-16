@@ -1,0 +1,47 @@
+@model MSGraph.Models.TeamsUserViewModel;
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4"><span>Welcome !</span>@ViewData["LoginUserName"]</h1>
+    <p>This Portal Displays the Teams user detalils along with their current availablity</p>
+</div>
+
+
+<div class="table-responsive">
+    <table class="table table-bordered table-condensed table-striped table-hover sortable">
+        @if (Model.teamsUsers.Count == 0)
+        {
+            <tr>
+                <td colspan="10">No Record's found.</td>
+            </tr>
+        }
+        else
+        {
+            <thead>
+                <tr class="danger">
+                    <th data-defaultsign="_19">DisplayName</th>
+                    <th data-defaultsign="AZ">GivenName</th>
+                    <th data-defaultsign="AZ">JobTitle</th>
+                    <th data-firstsort="desc">Mail</th>
+                    <th data-defaultsign="AZ">Availability</th>
+                    <th data-defaultsort="disabled">Availability</th>
+                </tr>
+            </thead>
+            foreach (var item in Model.teamsUsers)
+            {
+                <tr>
+                    <td>@item.DisplayName</td>
+                    <td>@item.GivenName</td>
+                    <td>@item.JobTitle</td>
+                    <td>@item.mail</td>
+                    <td>@item.Availability</td>
+                    <td>@item.Availability</td>
+                   
+                </tr>
+            }
+       }
+    </table>
+</div>
+
